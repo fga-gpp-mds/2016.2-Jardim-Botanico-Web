@@ -42,3 +42,4 @@ exclude_paths:
 - "test/"
 - "app/assets/javascripts"
 - vendor/
+- "JBB-Web/app/assets/javascripts/"
