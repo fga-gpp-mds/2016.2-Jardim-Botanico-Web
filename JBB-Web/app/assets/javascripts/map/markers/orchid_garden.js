@@ -1,4 +1,4 @@
-function addOrchidGardenMaker() {
+function addOrchidGardenMaker(infowindow) {
 	//set visitants info to use at infowindow
 	var orchidGardenContentString =
 		'<div id="content">'+
@@ -13,11 +13,6 @@ function addOrchidGardenMaker() {
 		'Orquidário</a> '+
 		'</div>'+
 		'</div>';
-
-	//set infowindow
-	var infowindow = new google.maps.InfoWindow({
-			content: orchidGardenContentString
-	});
 
 	//set position
 	var orchidGardenLatLng = {lat: -15.872070, lng: -47.836940};
@@ -36,4 +31,8 @@ function addOrchidGardenMaker() {
 
 	//sets on map
 	orchidGardenMarker.setMap(map);
+
+	//set the infowindow with japanese garden info
+    infowindow.setContent(orchidGardenContentString);
+    infowindow.setPosition(orchidGardenLatLng);
 }

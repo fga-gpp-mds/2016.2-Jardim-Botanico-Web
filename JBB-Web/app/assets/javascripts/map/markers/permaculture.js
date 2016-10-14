@@ -1,4 +1,4 @@
-function addPermacultureMarker(){
+function addPermacultureMarker(infowindow){
     //set smells garden info, will be used at infowindow
     var permacultureInfowindowContentString =
         '<div id="content">'+
@@ -18,11 +18,6 @@ function addPermacultureMarker(){
         '</div>'+
         '</div>';
 
-    //set the infowindow with smells garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: permacultureInfowindowContentString
-    });
-
     //set the position in latitude and longitude of the marker
     var permacultureLatLng = {lat: -15.875759, lng: -47.836626};
 
@@ -40,4 +35,8 @@ function addPermacultureMarker(){
 
     //set the marker on map
     permacultureMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(permacultureInfowindowContentString);
+    infowindow.setPosition(permacultureLatLng);
 }

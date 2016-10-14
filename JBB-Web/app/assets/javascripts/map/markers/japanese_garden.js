@@ -1,4 +1,4 @@
-function addJapaneseGardenMarker(){
+function addJapaneseGardenMarker(infowindow){
     //set japanese garden info, will be used at infowindow
     var japaneseGardenInfowindowContentString =
         '<div id="content">'+
@@ -15,11 +15,6 @@ function addJapaneseGardenMarker(){
         'Jardim Japonês</a> '+
         '</div>'+
         '</div>';
-
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: japaneseGardenInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var japaneseGardenLatLng = {lat: -15.875562, lng: -47.836124};
@@ -38,4 +33,8 @@ function addJapaneseGardenMarker(){
 
     //set the marker on map
     japaneseGardenMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(japaneseGardenInfowindowContentString);
+    infowindow.setPosition(japaneseGardenLatLng);
 }

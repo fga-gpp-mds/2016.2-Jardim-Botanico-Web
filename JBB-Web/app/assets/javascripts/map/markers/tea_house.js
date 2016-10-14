@@ -1,4 +1,4 @@
-function addTeaHouseMarker(){
+function addTeaHouseMarker(infowindow){
     //set tea house info, will be used at infowindow
     var teaHouseInfowindowContentString =
         '<div id="content">'+
@@ -13,11 +13,6 @@ function addTeaHouseMarker(){
         'Casa de Chá</a> '+
         '</div>'+
         '</div>';
-
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: teaHouseInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var teaHouseLatLng = {lat: -15.872346, lng: -47.837086};
@@ -36,4 +31,8 @@ function addTeaHouseMarker(){
 
     //set the marker on map
     teaHouseMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(teaHouseInfowindowContentString);
+    infowindow.setPosition(teaHouseLatLng);
 }

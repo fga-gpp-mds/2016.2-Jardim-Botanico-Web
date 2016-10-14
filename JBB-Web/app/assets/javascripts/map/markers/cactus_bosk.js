@@ -1,4 +1,4 @@
-function addCactusBoskMarker(){
+function addCactusBoskMarker(infowindow){
     //set tea house info, will be used at infowindow
     var cactusBoskInfowindowContentString =
         '<div id="content">'+
@@ -14,11 +14,7 @@ function addCactusBoskMarker(){
         '</div>'+
         '</div>';
 
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: cactusBoskInfowindowContentString
-    });
-
+    
     //set the position in latitude and longitude of the marker
     var cactusBoskLatLng = {lat: -15.875259, lng: -47.836627};
 
@@ -36,4 +32,8 @@ function addCactusBoskMarker(){
 
     //set the marker on map
     cactusBoskMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(cactusBoskInfowindowContentString);
+    infowindow.setPosition(cactusBoskLatLng);
 }

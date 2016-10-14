@@ -1,4 +1,4 @@
-function addVisitantCenterMaker() {
+function addVisitantCenterMaker(infowindow) {
 	//set visitants info to use at infowindow
 	var visitantsCenterContentString =
 		'<div id="content">'+
@@ -13,11 +13,6 @@ function addVisitantCenterMaker() {
 		'Centro de Visitação</a> '+
 		'</div>'+
 		'</div>';
-
-	//set infowindow
-	var infowindow = new google.maps.InfoWindow({
-			content: visitantsCenterContentString
-	});
 
 	//set position
 	var visitantCenterLatLng = {lat:  -15.873780, lng: -47.836607};
@@ -36,4 +31,8 @@ function addVisitantCenterMaker() {
 
 	//sets on map
 	visitantCenterMarker.setMap(map);
+
+	//set the infowindow with japanese garden info
+    infowindow.setContent(visitantsCenterContentString);
+    infowindow.setPosition(visitantCenterLatLng);
 }

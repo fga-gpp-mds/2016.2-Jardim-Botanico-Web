@@ -1,4 +1,4 @@
-function addAmphitheaterMarker(){
+function addAmphitheaterMarker(infowindow){
     //set tea house info, will be used at infowindow
     var amphitheaterInfowindowContentString =
         '<div id="content">'+
@@ -14,10 +14,6 @@ function addAmphitheaterMarker(){
         '</div>'+
         '</div>';
 
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: amphitheaterInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var amphitheaterLatLng = {lat: -15.868693, lng: -47.840186};
@@ -36,4 +32,8 @@ function addAmphitheaterMarker(){
 
     //set the marker on map
     amphitheaterMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(amphitheaterInfowindowContentString);
+    infowindow.setPosition(amphitheaterLatLng);
 }

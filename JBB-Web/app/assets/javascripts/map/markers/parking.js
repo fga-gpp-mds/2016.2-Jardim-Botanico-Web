@@ -1,4 +1,4 @@
-function addParkingMarker(){
+function addParkingMarker(infowindow){
     //set parking info, will be used at infowindow
     var parkingInfowindowContentString =
         '<div id="content">'+
@@ -11,11 +11,6 @@ function addParkingMarker(){
         'contendo vagas para todos os veiculos e até mesmo bicicletas'+
         '</div>'+
         '</div>';
-
-    //set the infowindow with parking info
-    var infowindow = new google.maps.InfoWindow({
-        content: parkingInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var parkingLatLng = {lat: -15.874579, lng: -47.836251};
@@ -34,4 +29,8 @@ function addParkingMarker(){
 
     //set the marker on map
     parkingMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(parkingInfowindowContentString);
+    infowindow.setPosition(parkingLatLng);
 }

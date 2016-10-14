@@ -1,4 +1,4 @@
-function addInfantParkMarker(){
+function addInfantParkMarker(infowindow){
     //set tea house info, will be used at infowindow
     var infantParkInfowindowContentString =
         '<div id="content">'+
@@ -12,11 +12,6 @@ function addInfantParkMarker(){
         'Parque Infantil/Área de Piquenique</a> '+
         '</div>'+
         '</div>';
-
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: infantParkInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var infantParkLatLng = {lat: -15.873544, lng: -47.835236};
@@ -35,4 +30,8 @@ function addInfantParkMarker(){
 
     //set the marker on map
     infantParkMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(infantParkInfowindowContentString);
+    infowindow.setPosition(infantParkLatLng);
 }

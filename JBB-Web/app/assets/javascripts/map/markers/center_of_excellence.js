@@ -1,4 +1,4 @@
-function addCenterOfExcellenceMarker(){
+function addCenterOfExcellenceMarker(infowindow){
     //set tea house info, will be used at infowindow
     var centerOfExcellenceInfowindowContentString =
         '<div id="content">'+
@@ -17,12 +17,6 @@ function addCenterOfExcellenceMarker(){
         '</div>'+
         '</div>';
 
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: centerOfExcellenceInfowindowContentString
-    });
-
-
     //set the position in latitude and longitude of the marker
     var centerOfExcellenceLatLng = {lat: -15.876439, lng: -47.825293};
 
@@ -40,5 +34,9 @@ function addCenterOfExcellenceMarker(){
 
     //set the marker on map
     centerOfExcellenceMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(centerOfExcellenceInfowindowContentString);
+    infowindow.setPosition(centerOfExcellenceLatLng);
 }
 s

@@ -1,4 +1,4 @@
-function addEvolutionaryGardenMarker(){
+function addEvolutionaryGardenMarker(infowindow){
     //set japanese garden info, will be used at infowindow
     var evolutionaryGardenInfowindowContentString =
         '<div id="content">'+
@@ -22,11 +22,6 @@ function addEvolutionaryGardenMarker(){
         '</div>'+
         '</div>';
 
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: evolutionaryGardenInfowindowContentString
-    });
-
     //set the position in latitude and longitude of the marker
     var evolutionaryGardenLatLng = {lat: -15.872847, lng: -47.837298};
 
@@ -44,4 +39,8 @@ function addEvolutionaryGardenMarker(){
 
     //set the marker on map
     evolutionaryGardenMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(evolutionaryGardenInfowindowContentString);
+    infowindow.setPosition(evolutionaryGardenLatLng);
 }

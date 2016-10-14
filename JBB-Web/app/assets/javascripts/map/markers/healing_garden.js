@@ -1,4 +1,4 @@
-function addHealingGardenMarker(){
+function addHealingGardenMarker(infowindow){
     //set tea hoJardim Medicinalo, will be used at infowindow
     var healingGardenInfowindowContentString =
         '<div id="content">'+
@@ -13,11 +13,6 @@ function addHealingGardenMarker(){
         'Jardim Medicinal</a> '+
         '</div>'+
         '</div>';
-
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: healingGardenInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var healingGardenLatLng = {lat: -15.873571, lng: -47.838149};
@@ -36,4 +31,8 @@ function addHealingGardenMarker(){
 
     //set the marker on map
     healingGardenMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(healingGardenInfowindowContentString);
+    infowindow.setPosition(healingGardenLatLng);
 }

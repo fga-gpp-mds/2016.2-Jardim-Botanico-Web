@@ -1,4 +1,4 @@
-function addNaturalLibraryMarker(){
+function addNaturalLibraryMarker(infowindow){
     //set tea hoBiblioteca da Naturezao, will be used at infowindow
     var naturalLibraryInfowindowContentString =
         '<div id="content">'+
@@ -14,11 +14,6 @@ function addNaturalLibraryMarker(){
         'Biblioteca da Natureza</a> '+
         '</div>'+
         '</div>';
-
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: naturalLibraryInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var naturalLibraryLatLng = {lat: -15.875422, lng: -47.836901};
@@ -37,4 +32,8 @@ function addNaturalLibraryMarker(){
 
     //set the marker on map
     naturalLibraryMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(naturalLibraryInfowindowContentString);
+    infowindow.setPosition(naturalLibraryLatLng);
 }

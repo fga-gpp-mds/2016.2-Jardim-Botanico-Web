@@ -1,4 +1,4 @@
-function addSunWatchMarker(){
+function addSunWatchMarker(infowindow){
     //set tea house info, will be used at infowindow
     var sunWatchInfowindowContentString =
         '<div id="content">'+
@@ -10,11 +10,6 @@ function addSunWatchMarker(){
         'sem utilizar eletrônicos! '+
         '</div>'+
         '</div>';
-
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: sunWatchInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var sunWatchLatLng = {lat: -15.873392, lng: -47.836761};
@@ -33,4 +28,8 @@ function addSunWatchMarker(){
 
     //set the marker on map
     sunWatchMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(sunWatchInfowindowContentString);
+    infowindow.setPosition(sunWatchLatLng);
 }

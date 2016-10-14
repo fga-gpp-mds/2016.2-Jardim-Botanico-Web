@@ -1,4 +1,4 @@
-function addGreeHouseMarker(){
+function addGreeHouseMarker(infowindow){
     //set tea house info, will be used at infowindow
     var greenHouseInfowindowContentString =
         '<div id="content">'+
@@ -13,11 +13,6 @@ function addGreeHouseMarker(){
         'Estufas</a> '+
         '</div>'+
         '</div>';
-
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: greenHouseInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var greenHouseLatLng = {lat: -15.876243, lng: -47.835719};
@@ -36,4 +31,8 @@ function addGreeHouseMarker(){
 
     //set the marker on map
     greenHouseMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(greenHouseInfowindowContentString);
+    infowindow.setPosition(greenHouseLatLng);
 }

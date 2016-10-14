@@ -18,25 +18,30 @@ function initialize() {
     // initializing map
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
 
+    // use only one infowindow for all places
+     var infowindow = new google.maps.InfoWindow({
+        content: null
+    });
+
     //add jbb space markers at map
-    addJapaneseGardenMarker();
-    addTeaHouseMarker();
-    addVisitantCenterMaker();
-    addOrchidGardenMaker();
-    addSunWatchMarker();
-    addAmphitheaterMarker();
-    addHealingGardenMarker();
-    addGreeHouseMarker();
-    addInfantParkMarker();
-    addCactusBoskMarker();
-    addParkingMarker();
-    addContemplationGardenMarker();
-    addEvolutionaryGardenMarker();
-    addSmellsGardenMarker();
-    addPermacultureMarker();
-    addHammockPlaceMarker();
-    addCenterOfExcellenceMarker();
-    addNaturalLibraryMarker();
+    addAmphitheaterMarker(infowindow);
+    addCactusBoskMarker(infowindow);
+    addCenterOfExcellenceMarker(infowindow);
+    addContemplationGardenMarker(infowindow);
+    addEvolutionaryGardenMarker(infowindow);
+    addGreeHouseMarker(infowindow);
+    addHammockPlaceMarker(infowindow);
+    addHealingGardenMarker(infowindow);
+    addInfantParkMarker(infowindow);
+    addJapaneseGardenMarker(infowindow);
+    addNaturalLibraryMarker(infowindow);
+    addOrchidGardenMaker(infowindow);
+    addParkingMarker(infowindow);
+    addPermacultureMarker(infowindow);
+    addSmellsGardenMarker(infowindow);
+    addSunWatchMarker(infowindow);
+    addTeaHouseMarker(infowindow);
+    addVisitantCenterMaker(infowindow);
 }
 
 function loadScript() {

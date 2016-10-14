@@ -1,4 +1,4 @@
-function addSmellsGardenMarker(){
+function addSmellsGardenMarker(infowindow){
     //set smells garden info, will be used at infowindow
     var smellsGardenInfowindowContentString =
         '<div id="content">'+
@@ -15,11 +15,6 @@ function addSmellsGardenMarker(){
         'Jardim de Cheiros</a> '+
         '</div>'+
         '</div>';
-
-    //set the infowindow with smells garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: smellsGardenInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var smellsGardenLatLng = {lat: -15.875609, lng: -47.837040};
@@ -38,4 +33,8 @@ function addSmellsGardenMarker(){
 
     //set the marker on map
     smellsGardenMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(smellsGardenInfowindowContentString);
+    infowindow.setPosition(smellsGardenLatLng);
 }

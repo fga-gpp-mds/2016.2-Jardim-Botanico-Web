@@ -1,4 +1,4 @@
-function addHammockPlaceMarker(){
+function addHammockPlaceMarker(infowindow){
     //set tea house info, will be used at infowindow
     var hammockPlaceInfowindowContentString =
         '<div id="content">'+
@@ -11,11 +11,6 @@ function addHammockPlaceMarker(){
         'Redário</a> '+
         '</div>'+
         '</div>';
-
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: hammockPlaceInfowindowContentString
-    });
 
     //set the position in latitude and longitude of the marker
     var hammockPlaceLatLng = {lat: -15.872893, lng: -47.834558};
@@ -34,4 +29,8 @@ function addHammockPlaceMarker(){
 
     //set the marker on map
     hammockPlaceMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(hammockPlaceInfowindowContentString);
+    infowindow.setPosition(hammockPlaceLatLng);
 }

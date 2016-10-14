@@ -1,4 +1,4 @@
-function addContemplationGardenMarker(){
+function addContemplationGardenMarker(infowindow){
     //set japanese garden info, will be used at infowindow
     var contemplationGardenInfowindowContentString =
         '<div id="content">'+
@@ -14,11 +14,7 @@ function addContemplationGardenMarker(){
         '</div>'+
         '</div>';
 
-    //set the infowindow with japanese garden info
-    var infowindow = new google.maps.InfoWindow({
-        content: contemplationGardenInfowindowContentString
-    });
-
+    
     //set the position in latitude and longitude of the marker
     var contemplationGardenLatLng = {lat: -15.873717, lng: -47.834306};
 
@@ -36,4 +32,8 @@ function addContemplationGardenMarker(){
 
     //set the marker on map
     contemplationGardenMarker.setMap(map);
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(contemplationGardenInfowindowContentString);
+    infowindow.setPosition(contemplationGardenLatLng);
 }
