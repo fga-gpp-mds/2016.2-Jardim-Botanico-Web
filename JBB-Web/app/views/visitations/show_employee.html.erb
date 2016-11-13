@@ -59,11 +59,10 @@ $(document).on('click', '.dropdown-menu li a', function () {
                     <td> <%= visitation.status %> </td>
                     <td> <%= visitation.visitants_amount %> </td>
                     <td> <%= visitation.visitants_paying %> </td>
-                    <th>Preço da visita: R$</th>
-                    <%= visitation.visitation_cost %>
-                    <th>,00</th>
+                    <th>Preço da visita:
+                     R$ <%= visitation.visitation_cost %> ,00</th>
                     <td> <%= visitation.description %> </td>
-                    <td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
+                    <td> <%= link_to 'Mostrar', action: 'index_employee', id: visitation %> </td>
                     <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
                       <td> <%= link_to "Aceitar Visitação", controller: "visitations",
                         action: "accept_visitation_employee", id: visitation %> </td>
@@ -95,8 +94,8 @@ $(document).on('click', '.dropdown-menu li a', function () {
             </div>
             <br>
             <p>
-            <%= link_to "Gerar PDF", show_visitation_path(format: 'pdf'), class: "btn btn-primary"%>
-            <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+            <%= link_to "Gerar PDF", show_visitation_employee_path(format: 'pdf'), class: "btn btn-primary"%>
+            <%= link_to "Voltar", user_my_requests_url(current_user), class: "btn btn-primary" %>
           </div>
         </div>
       </div>
